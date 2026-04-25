@@ -1,51 +1,79 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #1f2937;
+/* Floating icons */
+@keyframes float-a {
+  0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.18; }
+  33%       { transform: translateY(-22px) rotate(6deg); opacity: 0.28; }
+  66%       { transform: translateY(-10px) rotate(-4deg); opacity: 0.22; }
+}
+@keyframes float-b {
+  0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.14; }
+  40%       { transform: translateY(-30px) rotate(-8deg); opacity: 0.24; }
+  70%       { transform: translateY(-14px) rotate(5deg); opacity: 0.18; }
+}
+@keyframes float-c {
+  0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.2; }
+  50%       { transform: translateY(-18px) rotate(10deg); opacity: 0.3; }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
+/* Gradient background shift */
+@keyframes gradient-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-/* Prose styles for newsletter content */
-.prose h2 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-top: 2rem;
-  margin-bottom: 0.5rem;
-  color: #111827;
+/* Pulse glow */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.15); }
+  50%       { box-shadow: 0 0 40px 8px rgba(99, 102, 241, 0.12); }
 }
 
-.prose h3 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
-  color: #111827;
+/* Typing cursor blink */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
 }
 
-.prose p {
-  margin-bottom: 1rem;
-  line-height: 1.75;
-  color: #374151;
+/* Fade-up entrance */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-.prose ul {
-  list-style-type: disc;
-  padding-left: 1.5rem;
-  margin-bottom: 1rem;
+/* "Coming Soon" shimmer */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
 }
 
-.prose li {
-  margin-bottom: 0.375rem;
-  line-height: 1.75;
-  color: #374151;
+.animate-float-a { animation: float-a var(--dur, 6s) ease-in-out infinite; }
+.animate-float-b { animation: float-b var(--dur, 8s) ease-in-out infinite; }
+.animate-float-c { animation: float-c var(--dur, 7s) ease-in-out infinite; }
+
+.animate-gradient {
+  background-size: 300% 300%;
+  animation: gradient-shift 12s ease infinite;
 }
 
-.prose strong {
-  font-weight: 600;
-  color: #111827;
+.animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+
+.animate-fade-up { animation: fade-up 0.8s ease both; }
+
+.cursor-blink { animation: blink 1s step-end infinite; }
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    #6366f1 0%,
+    #a78bfa 30%,
+    #818cf8 50%,
+    #a78bfa 70%,
+    #6366f1 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
 }
