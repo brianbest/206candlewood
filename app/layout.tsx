@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
 
@@ -10,6 +10,10 @@ const geistSans = Geist({
 export const metadata: Metadata = {
   title: "206 Candlewood Cres — Coming Soon",
   description: "206 Candlewood Cres, Waterloo, Ontario. Coming soon.",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#6366f1",
 };
 
 export default function RootLayout({
