@@ -64,40 +64,22 @@ export default function Home() {
 
         {/* Main heading */}
         <h1
-          className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 mb-3 animate-fade-up"
+          className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 mb-8 animate-fade-up"
           style={{ animationDelay: "0.15s" }}
         >
           206 Candlewood
         </h1>
 
-        {/* "Coming Soon" shimmer */}
-        <p
-          className="text-2xl sm:text-3xl font-semibold mb-6 animate-fade-up animate-shimmer"
-          style={{ animationDelay: "0.25s" }}
-        >
-          Coming Soon
-          <span className="cursor-blink ml-0.5">_</span>
-        </p>
-
-        {/* Tagline */}
-        <p
-          className="text-base text-gray-500 leading-relaxed mb-8 animate-fade-up"
-          style={{ animationDelay: "0.35s" }}
-        >
-          A great place to call home. We&apos;re getting things ready for the
-          residents of 206&nbsp;Candlewood&nbsp;Cres.
-        </p>
-
         {/* Divider */}
         <div
           className="w-16 h-px bg-gray-200 mx-auto mb-6 animate-fade-up"
-          style={{ animationDelay: "0.4s" }}
+          style={{ animationDelay: "0.25s" }}
         />
 
         {/* Address */}
         <div
           className="flex items-center justify-center gap-2 text-sm text-gray-400 animate-fade-up"
-          style={{ animationDelay: "0.45s" }}
+          style={{ animationDelay: "0.3s" }}
         >
           <MapPin size={14} strokeWidth={1.8} className="text-indigo-300 shrink-0" />
           <span>206 Candlewood Cres, Waterloo, ON</span>
